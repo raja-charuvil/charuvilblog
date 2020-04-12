@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title>{{ title }} - Asokan Charuvil</title>
+	{% else %}
+	<title>Asokan Charuvil, story writer from Kerala</title>
+	{% endif %}
+</head>
+<body>
+	<div>
+		<a href="{{ url_for('home') }}">Home</a>
+		<a href="{{ url_for('profile') }}">Profile</a>
+		<a href="{{ url_for('books') }}">Books</a>
+		<a href="{{ url_for('socialmedia') }}">Social Media Posts</a>
+		<a href="{{ url_for('images') }}">Images</a>
+		<a href="{{ url_for('articles') }}">Articles</a>
+		<a href="{{ url_for('others') }}">Others</a>
+	</div>
+
+	{% block content %}
+	{% endblock %}
+
+</body>
+</html>
