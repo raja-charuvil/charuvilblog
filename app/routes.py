@@ -1,5 +1,6 @@
-from app import app
+from app import app, db
 from flask import render_template, url_for
+from app.models import Books
 
 
 @app.route('/')
@@ -15,7 +16,8 @@ def profile():
 
 @app.route('/books')
 def books():
-	return render_template('books.html')
+	book = Books.query.first()
+	return render_template('books.html', book=book)
 
 
 @app.route('/images')
